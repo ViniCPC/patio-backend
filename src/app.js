@@ -5,7 +5,12 @@ import cors from 'cors';
 
 const app = express();
 
-app.use(cors()); // ✅ libera para qualquer frontend (Vercel, localhost, etc)
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 
 app.use(express.json());
 app.use(mostrarCarros);
