@@ -5,14 +5,9 @@ import cors from 'cors';
 
 const app = express();
 
-app.use(cors({
-  origin: 'http://localhost:5173', // front do Vite
-}));    
+app.use(cors()); // ✅ libera para qualquer frontend (Vercel, localhost, etc)
 
 app.use(express.json());
-
-app.use(mostrarCarros)
-
-
+app.use(mostrarCarros);
 
 export default app;
